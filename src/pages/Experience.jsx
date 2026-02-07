@@ -1,7 +1,5 @@
 import React from 'react'
 import { motion } from "framer-motion";
-import { FaBriefcase, FaCalendarAlt, FaMapMarkerAlt, FaCog, FaTools } from "react-icons/fa";
-import { SiAutodesk } from "react-icons/si";
 import AnimatedSection from "../components/AnimatedSection.jsx";
 
 const cadProjects = [
@@ -67,38 +65,24 @@ const Experience = () => {
                     {/* Main Experience Card */}
                     <motion.div
                         variants={itemVariants}
-                        whileHover={{ scale: 1.02, y: -5 }}
-                        transition={{ duration: 0.3 }}
-                        className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/10 hover:border-white/30 transition-all duration-300 shadow-lg hover:shadow-2xl"
+                        className="bg-white/5 rounded-lg p-8 border border-white/10 hover:border-white/20 transition-colors duration-300"
                     >
                         {/* Header */}
-                        <div className="bg-gradient-to-r from-blue-400 to-purple-500 p-6 rounded-lg mb-6">
-                            <div className="flex items-center gap-4 mb-4">
-                                <FaBriefcase className="text-3xl text-white" />
-                                <div>
-                                    <h3 className="text-2xl font-bold text-white">Design Engineer</h3>
-                                    <h4 className="text-xl text-blue-100">Abhikalp Design Studio, Indore</h4>
-                                </div>
+                        <div className="border-l-4 border-white/30 pl-6 mb-8">
+                            <div className="mb-3">
+                                <h3 className="text-2xl font-bold text-white">Design Engineer</h3>
+                                <h4 className="text-lg text-gray-400">Abhikalp Design Studio, Indore</h4>
                             </div>
                             
-                            <div className="flex flex-wrap gap-4 text-white/90">
-                                <div className="flex items-center gap-2">
-                                    <FaCalendarAlt />
-                                    <span>December 2020 – July 2024</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <FaMapMarkerAlt />
-                                    <span>Indore, MP</span>
-                                </div>
+                            <div className="flex flex-wrap gap-6 text-gray-300 text-sm">
+                                <span>December 2020 – July 2024</span>
+                                <span>Indore, MP</span>
                             </div>
                         </div>
 
                         {/* Responsibilities */}
                         <div className="mb-8">
-                            <h4 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                                <FaTools className="text-yellow-400" />
-                                Key Responsibilities
-                            </h4>
+                            <h4 className="text-lg font-semibold text-white mb-4">Key Responsibilities</h4>
                             <motion.ul 
                                 variants={containerVariants}
                                 className="space-y-3"
@@ -111,9 +95,9 @@ const Experience = () => {
                                     <motion.li
                                         key={index}
                                         variants={itemVariants}
-                                        className="text-gray-300 flex items-start gap-3"
+                                        className="text-gray-300 text-sm flex items-start gap-3"
                                     >
-                                        <span className="text-green-400 mt-1">•</span>
+                                        <span className="text-white/50 mt-1">•</span>
                                         <span>{responsibility}</span>
                                     </motion.li>
                                 ))}
@@ -122,45 +106,33 @@ const Experience = () => {
 
                         {/* Skills Used */}
                         <div className="mb-8">
-                            <h4 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                                <FaCog className="text-blue-400" />
-                                Technical Skills
-                            </h4>
-                            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                            <h4 className="text-lg font-semibold text-white mb-4">Technical Skills</h4>
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                                 {skills.map((skill, index) => (
-                                    <motion.div
+                                    <div
                                         key={index}
-                                        variants={itemVariants}
-                                        whileHover={{ scale: 1.05 }}
-                                        className="bg-white/10 backdrop-blur-sm rounded-lg p-3 text-center border border-white/10 hover:border-white/30 transition-all duration-300"
+                                        className="rounded-md p-3 text-center bg-white/5 hover:bg-white/10 transition-colors duration-200"
                                     >
                                         <span className="text-gray-300 text-sm">{skill}</span>
-                                    </motion.div>
+                                    </div>
                                 ))}
                             </div>
                         </div>
 
                         {/* CAD Projects */}
                         <div>
-                            <h4 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                                <SiAutodesk className="text-orange-400" />
-                                CAD Projects
-                            </h4>
+                            <h4 className="text-lg font-semibold text-white mb-4">CAD Projects</h4>
                             <motion.div 
                                 variants={containerVariants}
-                                className="grid grid-cols-1 md:grid-cols-2 gap-4"
+                                className="grid grid-cols-1 md:grid-cols-2 gap-3"
                             >
                                 {cadProjects.map((project, index) => (
                                     <motion.div
                                         key={index}
                                         variants={itemVariants}
-                                        whileHover={{ scale: 1.02, x: 5 }}
-                                        className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 hover:border-white/20 transition-all duration-300"
+                                        className="rounded-md p-3 bg-white/5 hover:bg-white/10 transition-colors duration-200"
                                     >
-                                        <div className="flex items-start gap-3">
-                                            <span className="text-purple-400 mt-1 text-sm">▶</span>
-                                            <span className="text-gray-300 text-sm leading-relaxed">{project}</span>
-                                        </div>
+                                        <span className="text-gray-300 text-sm leading-relaxed">{project}</span>
                                     </motion.div>
                                 ))}
                             </motion.div>
@@ -171,18 +143,17 @@ const Experience = () => {
                     <AnimatedSection delay={0.6}>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                             {[
-                                { label: "Years Experience", value: "4+", color: "text-blue-400" },
-                                { label: "Projects Completed", value: "4+", color: "text-green-400" },
-                                { label: "Vehicle Types", value: "5+", color: "text-purple-400" },
-                                { label: "CAD Tools", value: "2+", color: "text-orange-400" }
+                                { label: "Years Experience", value: "4+" },
+                                { label: "Projects Completed", value: "4+" },
+                                { label: "Vehicle Types", value: "5+" },
+                                { label: "CAD Tools", value: "2+" }
                             ].map((stat, index) => (
                                 <motion.div
                                     key={index}
-                                    whileHover={{ scale: 1.05 }}
-                                    className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center border border-white/10 hover:border-white/30 transition-all duration-300"
+                                    className="rounded-lg p-4 text-center bg-white/5 border border-white/10 hover:border-white/20 transition-colors duration-200"
                                 >
-                                    <div className={`text-2xl font-bold ${stat.color} mb-1`}>{stat.value}</div>
-                                    <div className="text-gray-300 text-sm">{stat.label}</div>
+                                    <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
+                                    <div className="text-gray-400 text-sm">{stat.label}</div>
                                 </motion.div>
                             ))}
                         </div>
